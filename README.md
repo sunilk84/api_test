@@ -1,11 +1,15 @@
-README.md - API Test Framework
+README.md - API Test
 
 # API Test Framework with Pytest & Requests
 
 This is a lightweight and modular API test framework built using **Python**, **Pytest**, and **Requests**. It targets the [https://restful-api.dev](https://restful-api.dev) endpoint and includes automated tests for the `PATCH /objects/{id}` API.
 
+# Workaround:
+
+The shared API object with ID 7 is a reserved identifier and cannot be modified. To perform updates, a new object should be created using a POST request, and the resulting ID from that response can then be used to issue a PATCH request. This approach has been implemented in the API automation script.
+
 # Folder Structure
-api_test_framework/ 
+api_test/ 
 ├── tests/ 
 │ └── test_patch_scenarios.py # Test cases for PATCH endpoint 
 ├── utils/ │ └── http_utils.py # Reusable HTTP methods (GET, POST, PUT, PATCH, DELETE) 
@@ -13,7 +17,6 @@ api_test_framework/
 ├── requirements.txt # Python dependencies 
 └── .github/ └── workflows/ └── api-tests.yml # GitHub Actions CI pipeline
 ---
-
 
 ## Prerequisites
 
@@ -28,8 +31,8 @@ api_test_framework/
 1. **Clone the repository**
 
 bash
-git clone https://github.com/your-username/API_Test_Using_Python.git
-cd API_Test_Using_Python
+git clone https://github.com/sunilk84/api_test.git
+cd api_test
 
 2. **Create a virtual environment (optional but recommended)**
 
@@ -91,7 +94,6 @@ jobs:
     - name: Run API tests
       run: |
         pytest --maxfail=1 --disable-warnings -v
-
 
 
 Observations
