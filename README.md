@@ -30,8 +30,7 @@ api_test/
 
 1. **Clone the repository**
 
-bash
-git clone https://github.com/sunilk84/api_test.git
+git clone --branch master https://github.com/sunilk84/api_test.git 
 cd api_test
 
 2. **Create a virtual environment (optional but recommended)**
